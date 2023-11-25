@@ -1,4 +1,4 @@
-#ifndef __PROCESSPOLL_H_ // ?? 
+#ifndef __PROCESSPOLL_H_ 
 #define __PROCESSPOLL_H_
 
 #include <stdio.h>
@@ -23,7 +23,7 @@ class process
   process() : pid( -1 ), pipe{ 0, 0 } {}
 };
 
-template < typename T > // ??
+template < typename T > 
 class processpool
 {
  private:
@@ -35,7 +35,7 @@ class processpool
   int max_processes_num;
   process* sub_processes; // 通信管道
 //   单例模式确保一个类的唯一性，这样可以避免多次创建相同实例的开销，同时也方便在程序的任何地方访问该实例。
-  static processpool<T>* instance; 	// 涉及内存泄漏 由于是singleton模型 ？？？
+  static processpool<T>* instance; 
 
   processpool( int listenfd, int max_processes_num = 8 );
   ~processpool()
